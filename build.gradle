@@ -1,0 +1,20 @@
+group 'ru.innopolis.stc9'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile group: 'org.springframework', name: 'spring-context', version: '4.3.12.RELEASE'
+    compile group: 'org.postgresql', name: 'postgresql', version: '42.1.4'
+// https://mvnrepository.com/artifact/org.mongodb/mongo-java-driver
+    compile group: 'org.mongodb', name: 'mongo-java-driver', version: '2.14.3'
+
+
+}
