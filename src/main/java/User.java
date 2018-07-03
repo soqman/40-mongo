@@ -1,11 +1,11 @@
 import java.util.Date;
 
 public class User {
-    String id;
-    String name;
-    int age;
-    Date date;
-    Address address;
+    private String id;
+    private String name;
+    private int age;
+    private Date date;
+    private Address address;
 
     public User(String name, int age, Date date, Address address) {
         this.name = name;
@@ -48,6 +48,32 @@ public class User {
 
     public String getId() {
         return id;
+    }
+
+    @Override
+    public String toString() {
+        return "User{name='" + name + '\'' +
+                ", age=" + age +
+                ", date=" + date +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        User user = (User) o;
+
+        if (age != user.age) return false;
+        return name.equals(user.name);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = name.hashCode();
+        result = 31 * result + age;
+        return result;
     }
 
     public void setId(String id) {
